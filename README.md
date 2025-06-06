@@ -37,6 +37,19 @@ docker-compose up
 
 The output of each step can be used as input for the next one inside n8n.
 
+## Importing the included n8n workflow
+
+A ready‑made workflow file is provided in `workflow.json`. To load it into
+n8n:
+
+1. Start your n8n instance.
+2. Choose **Import from File** on the start screen or from the workflow menu.
+3. Select `workflow.json` from this repository.
+4. Review the nodes and adjust any URLs or credentials before running it.
+
+The workflow mirrors the example above using four HTTP Request nodes and
+expects the services from this repository to be running locally.
+
 ## Environment collection
 
 Run `./collect_env.sh` to gather information about your Docker and Python
