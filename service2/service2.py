@@ -9,7 +9,7 @@ def run(cmd):
         raise Exception(f"Command `{cmd}` failed:\n{proc.stderr.strip()}")
     return proc.stdout
 
-@app.route('/clip', methods=['POST'])
+@app.route('/clip-video', methods=['POST'])
 def clip_video():
     try:
         data = request.get_json(force=True)
