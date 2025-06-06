@@ -26,6 +26,21 @@ docker-compose build
 docker-compose up
 ```
 
+## Configuration
+
+Before running the workflow, make sure the required credentials are available:
+
+* **OpenAI API key** – set the `OPENAI_API_KEY` environment variable so that
+  Whisper can access OpenAI's transcription service.
+* **Airtable token** – provide your Airtable API token in the
+  `AIRTABLE_TOKEN` environment variable. This is used when recording
+  information about processed videos.
+* **Cookies** – place your `cookies.txt` file at the repository root. It will
+  be copied into the service containers as `/cookies.txt` for `yt-dlp`.
+* **Publishing credentials** – the example services for uploading content are
+  stubs. When implementing real publishing logic you will need API keys or
+  login tokens for the target platforms (e.g. YouTube or social networks).
+
 ## Example n8n workflow
 
 1. **HTTP Request** – call `service1` with `{ "videoUrl": "..." }`. Save
