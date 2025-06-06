@@ -1,7 +1,11 @@
 from flask import Flask, request, jsonify
-import traceback
+import logging
 
 app = Flask(__name__)
+
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s %(levelname)s %(message)s')
+logger = logging.getLogger(__name__)
 
 @app.route('/publish-short', methods=['POST'])
 def publish_short():
@@ -15,7 +19,7 @@ def publish_short():
         # Here would be the real upload logic
         return jsonify({'status': 'ok', 'platform': platform, 'accounts': accounts})
     except Exception as e:
-        traceback.print_exc()
+        logger.exception("Internal error")
         return jsonify(error=str(e)), 500
 
 if __name__ == '__main__':
