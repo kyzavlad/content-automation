@@ -1,0 +1,69 @@
+{
+  "name": "Vlad Kuzmenko Content Distribution",
+  "nodes": [
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "http://localhost:3000/download-transcribe",
+        "jsonParameters": true,
+        "options": {},
+        "bodyParametersJson": "{ \"videoUrl\": \"https://example.com/video\" }"
+      },
+      "name": "Download and Transcribe",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "http://localhost:3000/clip",
+        "jsonParameters": true,
+        "options": {},
+        "bodyParametersJson": "{ \"inputPath\": \"={{ $json[\\\"inputPath\\\"] }}\", \"start\": 0, \"end\": 60 }"
+      },
+      "name": "Clip",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "http://localhost:3000/edit",
+        "jsonParameters": true,
+        "options": {},
+        "bodyParametersJson": "{ \"inputPath\": \"={{ $json[\\\"clipPath\\\"] }}\" }"
+      },
+      "name": "Edit",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "http://localhost:3000/publish-short",
+        "jsonParameters": true,
+        "options": {},
+        "bodyParametersJson": "{ \"inputPath\": \"={{ $json[\\\"editedPath\\\"] }}\" }"
+      },
+      "name": "Publish",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [850, 300]
+    }
+  ],
+  "connections": {
+    "Download and Transcribe": {
+      "main": [[ { "node": "Clip", "type": "main", "index": 0 } ]]
+    },
+    "Clip": {
+      "main": [[ { "node": "Edit", "type": "main", "index": 0 } ]]
+    },
+    "Edit": {
+      "main": [[ { "node": "Publish", "type": "main", "index": 0 } ]]
+    }
+  },
+  "active": false
+}
