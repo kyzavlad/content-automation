@@ -8,8 +8,8 @@ editing them and finally publishing to social networks or YouTube.
 
 1. **service1** – download a video using `yt-dlp` with cookies and transcribe it
    with Whisper. Endpoint: `POST /download-transcribe`.
-2. **service2** – cut a clip from a video. Endpoint: `POST /clip`.
-3. **service3** – basic editing of a short video. Endpoint: `POST /edit`.
+2. **service2** – cut a clip from a video. Endpoint: `POST /clip-video`.
+3. **service3** – basic editing of a short video. Endpoint: `POST /edit-shorts`.
 4. **service4** – stub for publishing short videos to multiple accounts.
    Endpoint: `POST /publish-short`.
 5. **service5** – stub for publishing long videos. Endpoint: `POST /publish-long`.
@@ -31,9 +31,13 @@ docker-compose up
 1. **HTTP Request** – call `service1` with `{ "videoUrl": "..." }`. Save
    `inputPath` and `segments`.
 2. **HTTP Request** – call `service2` with `{ "inputPath": "input.mp4", "start": 0,
-   "end": 60 }`. Save `clipPath`.
-3. **HTTP Request** – call `service3` with `{ "inputPath": "clip.mp4" }`.
-4. **HTTP Request** – call `service4` or `service5` to publish the result.
+   "end": 60 }` to `POST /clip-video`. Save `clipPath`.
+3. **HTTP Request** – call `service3` with `{ "inputPath": "clip.mp4" }` to
+   `POST /edit-shorts`. Save `editedPath`.
+4. **HTTP Request** – call `service4` with `{ "videoPath": "edited.mp4",
+   "platform": "tiktok", "accounts": ["myAccount"] }` or `service5` with
+   `{ "videoPath": "edited.mp4", "accounts": ["myAccount"] }` to publish the
+   result.
 
 The output of each step can be used as input for the next one inside n8n.
 

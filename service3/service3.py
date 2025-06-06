@@ -9,7 +9,7 @@ def run(cmd):
         raise Exception(f"Command `{cmd}` failed:\n{proc.stderr.strip()}")
     return proc.stdout
 
-@app.route('/edit', methods=['POST'])
+@app.route('/edit-shorts', methods=['POST'])
 def edit_video():
     try:
         data = request.get_json(force=True)
