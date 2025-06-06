@@ -16,7 +16,7 @@ RUN pip install --no-cache-dir \
 RUN pip install --no-cache-dir openai-whisper flask
 
 # 4) Копируем файл куки внутрь образа
-COPY ../cookies.txt /cookies.txt
+COPY cookies.txt /cookies.txt
 
 # 5) Рабочая директория
 WORKDIR /app
