@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify
-rz9aqm-codex/настройка-автоматизации-контента-и-сервисов-на-сервере
 import subprocess, json, traceback, os
 
 FFMPEG_BIN = os.getenv('FFMPEG_PATH', '/usr/bin/ffmpeg')
