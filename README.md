@@ -10,6 +10,7 @@ This repository contains a group of small Flask services that together form a vi
 ## Installation
 1. Clone this repository.
 2. Copy `api-keys.env` to `.env` and fill in all placeholders.
+3. Add account details in `accounts-config.json` (see the template below – ten accounts per platform).
 4. Build and start the services:
    ```bash
    docker-compose build
