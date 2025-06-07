@@ -30,7 +30,11 @@ Create a `.env` file based on `api-keys.env` and provide the following variables
 | **service1** | `POST /download-transcribe` on port **3001** | Downloads a video using `yt-dlp` (with `cookies.txt`) and transcribes it via Whisper. |
 | **service2** | `POST /clip-video` on port **3002** | Cuts viral moments from the long video. |
 | **service3** | `POST /edit-shorts` on port **3003** | Adds subtitles, music and fades to clips. |
+rz9aqm-codex/настройка-автоматизации-контента-и-сервисов-на-сервере
 | **service4** | `POST /publish-shorts` on port **3004** | Publishes edited clips to TikTok, Instagram, YouTube Shorts, Facebook and X. |
+=======
+| **service4** | `POST /publish-shorts` on port **3004** | Publishes edited clips to TikTok, Instagram, YouTube Shorts and X. |
+main
 | **service5** | `POST /publish-long` on port **3005** | Publishes the full video on YouTube. |
 
 The containers `service1`, `service2` and `service3` share the volume `media_data` mounted to `/data` so that intermediate files are accessible between them.
@@ -93,4 +97,5 @@ The agent handles three main scenarios:
 
 ## Environment collection
 Run `./collect_env.sh` to produce `env_report.tar.gz` with Docker and Python info if you need to troubleshoot the setup.
-
+rz9aqm-codex/настройка-автоматизации-контента-и-сервисов-на-сервере
+main
