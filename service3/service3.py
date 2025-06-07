@@ -7,7 +7,6 @@ def run(cmd):
     proc = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     if proc.returncode != 0:
         raise Exception(f"Command `{cmd}` failed:\n{proc.stderr.strip()}")
-
     return proc.stdout
 
 @app.route('/edit-shorts', methods=['POST'])
