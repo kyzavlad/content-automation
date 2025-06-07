@@ -31,6 +31,17 @@
         }
       ]
     },
+rz9aqm-codex/настройка-автоматизации-контента-и-сервисов-на-сервере
+    "facebook": {
+      "accounts": [
+        {
+          "id": "facebook_1",
+          "page_id": "ЗАПОЛНИТЬ",
+          "access_token": "ЗАПОЛНИТЬ"
+        }
+      ]
+    },
+main
     "x": {
       "accounts": [
         {

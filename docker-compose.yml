@@ -6,16 +6,28 @@ services:
       dockerfile: service1/Dockerfile
     ports:
       - "3001:3001"
+rz9aqm-codex/настройка-автоматизации-контента-и-сервисов-на-сервере
+    volumes:
+      - media_data:/data
+main
 
   service2:
     build: ./service2
     ports:
       - "3002:3002"
+rz9aqm-codex/настройка-автоматизации-контента-и-сервисов-на-сервере
+    volumes:
+      - media_data:/data
+main
 
   service3:
     build: ./service3
     ports:
       - "3003:3003"
+rz9aqm-codex/настройка-автоматизации-контента-и-сервисов-на-сервере
+    volumes:
+      - media_data:/data
+main
 
   service4:
     build: ./service4
@@ -26,3 +38,8 @@ services:
     build: ./service5
     ports:
       - "3005:3005"
+rz9aqm-codex/настройка-автоматизации-контента-и-сервисов-на-сервере
+
+volumes:
+  media_data:
+main

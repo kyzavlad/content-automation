@@ -13,12 +13,13 @@ RUN pip install --no-cache-dir \
       --index-url https://download.pytorch.org/whl/cpu
 
 # 3) Whisper и Flask
-RUN pip install --no-cache-dir openai-whisper flask
+RUN pip install --no-cache-dir openai-whisper gdown flask
 
 # 4) Копируем файл куки внутрь образа
 COPY cookies.txt /cookies.txt
 
-# 5) Рабочая директория
+# 5) Переменные окружения и рабочая директория
+ENV FFMPEG_PATH=/usr/bin/ffmpeg
 WORKDIR /app
 
 # 6) Копируем код сервиса
