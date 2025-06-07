@@ -7,3 +7,4 @@ env_report.tar.gz
 .Python
 pyvenv.cfg
 pytest_cache/
+__pycache__/
