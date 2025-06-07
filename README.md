@@ -1,4 +1,3 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
 diff --git a//dev/null b/README.md
 index 0000000000000000000000000000000000000000..de3c79fbd4ec438539a57073f1266422c84389f2 100644
 --- a//dev/null
@@ -100,6 +99,3 @@ index 0000000000000000000000000000000000000000..de3c79fbd4ec438539a57073f1266422
 +## Environment collection
 +Run `./collect_env.sh` to produce `env_report.tar.gz` with Docker and Python info if you need to troubleshoot the setup.
 +
- 
-EOF
-)
