@@ -1,0 +1,45 @@
+{
+  "platforms": {
+    "tiktok": {
+      "accounts": [
+        {
+          "id": "tiktok_1",
+          "username": "ЗАПОЛНИТЬ",
+          "password": "ЗАПОЛНИТЬ",
+          "cookies": "ЗАПОЛНИТЬ_ПОСЛЕ_ЛОГИНА"
+        }
+        
+      ]
+    },
+    "instagram": {
+      "accounts": [
+        {
+          "id": "instagram_1",
+          "username": "ЗАПОЛНИТЬ",
+          "password": "ЗАПОЛНИТЬ",
+          "cookies": "ЗАПОЛНИТЬ"
+        }
+      ]
+    },
+    "youtube": {
+      "accounts": [
+        {
+          "id": "youtube_1",
+          "channel_id": "ЗАПОЛНИТЬ",
+          "api_key": "ЗАПОЛНИТЬ",
+          "oauth_token": "ЗАПОЛНИТЬ"
+        }
+      ]
+    },
+    "x": {
+      "accounts": [
+        {
+          "id": "x_1",
+          "username": "ЗАПОЛНИТЬ",
+          "password": "ЗАПОЛНИТЬ",
+          "cookies": "ЗАПОЛНИТЬ"
+        }
+      ]
+    }
+  }
+}
