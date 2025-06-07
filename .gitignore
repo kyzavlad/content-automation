@@ -1,0 +1,10 @@
+__pycache__/
+.env
+env_report.tar.gz
+.env_report/
+*.pyc
+*.pyo
+.Python
+pyvenv.cfg
+pytest_cache/
+__pycache__/

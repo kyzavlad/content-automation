@@ -1,8 +1,37 @@
 version: '3'
 services:
   service1:
-    build: ./service1
+    build:
+      context: .
+      dockerfile: service1/Dockerfile
     ports:
       - "3001:3001"
-    # cookies.txt уже встроен в образ, монтировать не нужно
-  # service2 и service3 оставляем без изменений
+    volumes:
+      - media_data:/data
+
+  service2:
+    build: ./service2
+    ports:
+      - "3002:3002"
+    volumes:
+      - media_data:/data
+
+  service3:
+    build: ./service3
+    ports:
+      - "3003:3003"
+    volumes:
+      - media_data:/data
+
+  service4:
+    build: ./service4
+    ports:
+      - "3004:3004"
+
+  service5:
+    build: ./service5
+    ports:
+      - "3005:3005"
+
+volumes:
+  media_data:

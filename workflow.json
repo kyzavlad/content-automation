@@ -1,0 +1,15 @@
+{
+  "name": "Vlad Kuzmenko Content Distribution",
+  "nodes": [
+    {"name": "When chat message received", "type": "@n8n/n8n-nodes-langchain.chatTrigger"},
+    {"name": "AI Agent", "type": "@n8n/n8n-nodes-langchain.agent"},
+    {"name": "Get Content Database", "type": "n8n-nodes-base.airtableTool"},
+    {"name": "Transcribe and Download Video", "type": "@n8n/n8n-nodes-langchain.toolHttpRequest"},
+    {"name": "Clip Long Video", "type": "@n8n/n8n-nodes-langchain.toolHttpRequest"},
+    {"name": "Edit Shorts Video", "type": "@n8n/n8n-nodes-langchain.toolHttpRequest"},
+    {"name": "Publish Shorts", "type": "n8n-nodes-base.httpRequestTool"},
+    {"name": "Publish Long", "type": "n8n-nodes-base.httpRequestTool"},
+    {"name": "Update Text Info Database", "type": "n8n-nodes-base.airtableTool"},
+    {"name": "Update Clips Database", "type": "n8n-nodes-base.airtableTool"}
+  ]
+}
