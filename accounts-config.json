@@ -1,0 +1,74 @@
+{
+  "platforms": {
+    "tiktok": {
+      "accounts": [
+        {"id": "tiktok_1", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "tiktok_2", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "tiktok_3", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "tiktok_4", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "tiktok_5", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "tiktok_6", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "tiktok_7", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "tiktok_8", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "tiktok_9", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "tiktok_10", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"}
+      ]
+    },
+    "instagram": {
+      "accounts": [
+        {"id": "instagram_1", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "instagram_2", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "instagram_3", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "instagram_4", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "instagram_5", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "instagram_6", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "instagram_7", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "instagram_8", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "instagram_9", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "instagram_10", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"}
+      ]
+    },
+    "youtube": {
+      "accounts": [
+        {"id": "youtube_1", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "youtube_2", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "youtube_3", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "youtube_4", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "youtube_5", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "youtube_6", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "youtube_7", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "youtube_8", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "youtube_9", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "youtube_10", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"}
+      ]
+    },
+    "facebook": {
+      "accounts": [
+        {"id": "facebook_1", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "facebook_2", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "facebook_3", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "facebook_4", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "facebook_5", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "facebook_6", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "facebook_7", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "facebook_8", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "facebook_9", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "facebook_10", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"}
+      ]
+    },
+    "x": {
+      "accounts": [
+        {"id": "x_1", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "x_2", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "x_3", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "x_4", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "x_5", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "x_6", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "x_7", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "x_8", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "x_9", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"},
+        {"id": "x_10", "username": "ЗАПОЛНИТЬ", "password": "ЗАПОЛНИТЬ", "cookies": "ЗАПОЛНИТЬ"}
+      ]
+    }
+  }
+}
