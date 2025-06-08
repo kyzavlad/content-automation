@@ -1,9 +1,11 @@
 version: '3'
 services:
   service1:
-    build:
-      context: .
-      dockerfile: service1/Dockerfile
+  build: ./service1          # context set to the folder
+  ports:
+    - "3001:3001"
+  volumes:
+    - media_data:/data
     ports:
       - "3001:3001"
     volumes:
