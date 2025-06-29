@@ -1,6 +1,16 @@
 version: '3.8'
-
 services:
+  # Redis for job queue
+  redis:
+    image: redis:7-alpine
+    container_name: redis_queue
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+  # Service 1: Transcribe & Download
   service1:
     container_name: transcribe_service
     build:
@@ -10,10 +20,14 @@ services:
     volumes:
       - ./service1:/app
       - media_data:/data
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - redis
     restart: unless-stopped
-
+  # Service 2: Clip Creation
   service2:
-    container_name: clipper_service
+    container_name: clip_service
     build:
       context: ./service2
     ports:
@@ -22,7 +36,7 @@ services:
       - ./service2:/app
       - media_data:/data
     restart: unless-stopped
-
+  # Service 3: Long Video Editor
   service3:
     container_name: editor_service
     build:
@@ -31,9 +45,13 @@ services:
       - "3003:3003"
     volumes:
       - ./service3:/app
-      - media_data:/data
+      - media_data:/data          # ВОТ ЭТО ВАЖНО!
+      - /media_upload:/media_upload:ro
+      - /var/www/clips:/var/www/clips
+    environment:
+      - NODE_ENV=production
     restart: unless-stopped
-
+  # Service 4: Publish Shorts
   service4:
     container_name: publish_shorts_service
     build:
@@ -43,8 +61,9 @@ services:
     volumes:
       - ./service4:/app
       - media_data:/data
+      - /var/www/clips:/var/www/clips  # ДОБАВЛЕНО
     restart: unless-stopped
-
+  # Service 5: Publish Long Videos
   service5:
     container_name: publish_long_service
     build:
@@ -55,6 +74,6 @@ services:
       - ./service5:/app
       - media_data:/data
     restart: unless-stopped
-
 volumes:
   media_data:
+  redis_data:

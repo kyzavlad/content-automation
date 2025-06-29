@@ -1,0 +1,304 @@
+import os
+import json
+import logging
+import subprocess
+import numpy as np
+from flask import Flask, request, jsonify
+from datetime import datetime
+import wave
+import contextlib
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
+
+app = Flask(__name__)
+
+# Create directories
+os.makedirs('/data/clips', exist_ok=True)
+os.makedirs('/data/temp', exist_ok=True)
+
+def detect_speech_start(audio_file, silence_threshold=0.02, window_size=0.5):
+    """Detect when actual speech starts using audio analysis"""
+    try:
+        # Extract audio if video file
+        temp_audio = f"/data/temp/temp_audio_{datetime.now().timestamp()}.wav"
+        cmd = f'ffmpeg -i "{audio_file}" -ac 1 -ar 16000 "{temp_audio}" -y'
+        subprocess.run(cmd, shell=True, capture_output=True)
+        
+        # Read audio data
+        with contextlib.closing(wave.open(temp_audio, 'r')) as f:
+            frames = f.getnframes()
+            rate = f.getframerate()
+            duration = frames / float(rate)
+            
+            # Read audio data
+            audio_data = np.frombuffer(f.readframes(frames), dtype=np.int16)
+            
+        # Normalize audio
+        audio_data = audio_data / 32768.0
+        
+        # Find speech start
+        window_samples = int(window_size * rate)
+        for i in range(0, len(audio_data) - window_samples, window_samples // 4):
+            window = audio_data[i:i + window_samples]
+            rms = np.sqrt(np.mean(window**2))
+            
+            if rms > silence_threshold:
+                # Found speech start
+                speech_start = i / rate
+                # Clean up
+                os.remove(temp_audio)
+                # Return with 0.3 second pre-roll for natural start
+                return max(0, speech_start - 0.3)
+        
+        os.remove(temp_audio)
+        return 0
+    except Exception as e:
+        logging.error(f"Error detecting speech: {str(e)}")
+        return 0
+
+def analyze_transcript_for_viral_moments(transcript):
+    """Analyze transcript to find the most viral-worthy moments"""
+    viral_keywords = {
+        # Money/Success
+        'money': 10, 'rich': 10, 'millionaire': 15, 'billion': 15, 
+        'success': 8, 'wealth': 8, 'profit': 8, 'earn': 8,
+        '10k': 12, '100k': 15, 'million': 12,
+        
+        # Emotional hooks
+        'secret': 12, 'truth': 10, 'never': 8, 'always': 8,
+        'mistake': 10, 'fail': 10, 'lost': 10, 'won': 10,
+        
+        # Action words
+        'how': 8, 'why': 8, 'what': 6, 'must': 8,
+        'need': 8, 'should': 7, 'can': 6, 'will': 6,
+        
+        # Trending topics
+        'ai': 12, 'chatgpt': 15, 'tiktok': 12, 'viral': 15,
+        'hack': 12, 'trick': 10, 'tip': 8, 'strategy': 10
+    }
+    
+    segments_with_scores = []
+    
+    for segment in transcript.get('segments', []):
+        text = segment.get('text', '').lower()
+        score = 0
+        
+        # Calculate viral score
+        for keyword, weight in viral_keywords.items():
+            if keyword in text:
+                score += weight
+        
+        # Bonus for questions
+        if '?' in text:
+            score += 5
+        
+        # Bonus for numbers
+        import re
+        if re.search(r'\d+k|\d+\$|\d+%', text):
+            score += 10
+            
+        segment['viral_score'] = score
+        segments_with_scores.append(segment)
+    
+    return sorted(segments_with_scores, key=lambda x: x['viral_score'], reverse=True)
+
+def find_natural_cut_points(transcript, min_duration=15, max_duration=60):
+    """Find natural points to cut based on complete thoughts"""
+    cut_points = []
+    
+    # Sentence endings
+    sentence_enders = ['.', '!', '?', '...']
+    
+    # Thought completers
+    thought_markers = [
+        'so', 'and', 'but', 'because', 'however',
+        'therefore', 'basically', 'right', 'okay'
+    ]
+    
+    segments = transcript.get('segments', [])
+    
+    for i, segment in enumerate(segments):
+        text = segment.get('text', '').strip()
+        
+        # Check if this is a good cut point
+        is_cut_point = False
+        
+        # End of sentence
+        if any(text.endswith(ender) for ender in sentence_enders):
+            is_cut_point = True
+        
+        # Natural pause words at start of next segment
+        if i < len(segments) - 1:
+            next_text = segments[i + 1].get('text', '').lower().strip()
+            if any(next_text.startswith(marker) for marker in thought_markers):
+                is_cut_point = True
+        
+        if is_cut_point:
+            cut_points.append({
+                'time': segment.get('end', 0),
+                'index': i,
+                'text': text
+            })
+    
+    return cut_points
+
+def create_smart_clips(video_path, transcript, max_clips=5):
+    """Create clips based on viral potential and natural speech patterns"""
+    clips = []
+    
+    # Get video info
+    probe_cmd = f'ffprobe -v quiet -print_format json -show_format -show_streams "{video_path}"'
+    probe_result = subprocess.run(probe_cmd, shell=True, capture_output=True, text=True)
+    video_info = json.loads(probe_result.stdout)
+    video_duration = float(video_info['format']['duration'])
+    
+    # Detect speech start
+    speech_start = detect_speech_start(video_path)
+    logging.info(f"Speech detected starting at: {speech_start}s")
+    
+    # Analyze transcript for viral moments
+    viral_segments = analyze_transcript_for_viral_moments(transcript)
+    
+    # Find natural cut points
+    cut_points = find_natural_cut_points(transcript)
+    
+    # Create clips based on viral scores
+    used_times = []
+    
+    for segment in viral_segments[:max_clips * 2]:  # Check more segments than needed
+        if len(clips) >= max_clips:
+            break
+            
+        start_time = max(speech_start, segment.get('start', 0) - 1.0)  # 1 second pre-roll
+        
+        # Find the next natural cut point
+        next_cut = None
+        for cut in cut_points:
+            if cut['time'] > start_time + 15:  # Minimum 15 seconds
+                next_cut = cut
+                break
+        
+        if next_cut:
+            end_time = min(next_cut['time'] + 0.5, video_duration)  # 0.5s post-roll
+            duration = end_time - start_time
+            
+            # Check duration constraints
+            if 15 <= duration <= 60:
+                # Check overlap with existing clips
+                overlap = False
+                for used_start, used_end in used_times:
+                    if not (end_time < used_start or start_time > used_end):
+                        overlap = True
+                        break
+                
+                if not overlap:
+                    clips.append({
+                        'start': start_time,
+                        'end': end_time,
+                        'duration': duration,
+                        'viral_score': segment['viral_score'],
+                        'text': segment.get('text', ''),
+                        'index': len(clips) + 1
+                    })
+                    used_times.append((start_time, end_time))
+    
+    # Sort clips by time order
+    clips.sort(key=lambda x: x['start'])
+    
+    # Re-index clips
+    for i, clip in enumerate(clips):
+        clip['index'] = i + 1
+    
+    logging.info(f"Created {len(clips)} smart clips based on viral potential")
+    return clips
+
+def extract_clips(video_path, clips):
+    """Extract the actual video clips with optimized settings"""
+    extracted_clips = []
+    
+    for clip in clips:
+        output_filename = f"clip_{clip['index']:02d}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.mp4"
+        output_path = f"/data/clips/{output_filename}"
+        
+        # FFmpeg command for high-quality extraction
+        cmd = f'''ffmpeg -y -ss {clip['start']} -i "{video_path}" \
+        -t {clip['duration']} \
+        -c:v libx264 -preset fast -crf 23 \
+        -c:a aac -b:a 128k \
+        -avoid_negative_ts make_zero \
+        -movflags +faststart \
+        "{output_path}"'''
+        
+        logging.info(f"Extracting clip {clip['index']}: {clip['start']}s - {clip['end']}s")
+        result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+        
+        if result.returncode == 0 and os.path.exists(output_path):
+            extracted_clips.append({
+                'path': output_path,
+                'filename': output_filename,
+                'start': clip['start'],
+                'end': clip['end'],
+                'duration': clip['duration'],
+                'index': clip['index'],
+                'viral_score': clip.get('viral_score', 0),
+                'text': clip.get('text', '')
+            })
+            logging.info(f"Successfully extracted clip {clip['index']}")
+        else:
+            logging.error(f"Failed to extract clip {clip['index']}: {result.stderr}")
+    
+    return extracted_clips
+
+@app.route('/health', methods=['GET'])
+def health():
+    return jsonify({
+        'status': 'ok', 
+        'service': 'smart-clip-creator',
+        'features': [
+            'speech_detection',
+            'viral_analysis',
+            'natural_cut_detection',
+            'smart_clipping'
+        ]
+    })
+
+@app.route('/clip-video', methods=['POST'])
+def clip_video():
+    """Create smart clips from video based on viral potential"""
+    try:
+        data = request.json
+        video_path = data.get('video_path')
+        transcript = data.get('transcript', {})
+        max_clips = data.get('max_clips', 5)
+        
+        if not video_path:
+            return jsonify({'error': 'No video path provided'}), 400
+        
+        if not os.path.exists(video_path):
+            return jsonify({'error': f'Video file not found: {video_path}'}), 404
+        
+        # Create smart clips
+        clips = create_smart_clips(video_path, transcript, max_clips)
+        
+        if not clips:
+            return jsonify({'error': 'No suitable clips found'}), 404
+        
+        # Extract the clips
+        extracted_clips = extract_clips(video_path, clips)
+        
+        return jsonify({
+            'status': 'success',
+            'clips': extracted_clips,
+            'total_clips': len(extracted_clips),
+            'transcript': transcript  # Pass through for next service
+        }), 200
+        
+    except Exception as e:
+        logging.error(f"Error in clip_video: {str(e)}")
+        import traceback
+        logging.error(traceback.format_exc())
+        return jsonify({'error': str(e)}), 500
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=3002, threaded=True)

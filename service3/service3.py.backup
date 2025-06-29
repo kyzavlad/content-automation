@@ -1,0 +1,418 @@
+import os
+import json
+import random
+import logging
+import subprocess
+import re
+import shutil
+from flask import Flask, request, jsonify
+from datetime import datetime
+import glob
+import math
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
+
+app = Flask(__name__)
+
+# Create directories
+os.makedirs('/data/edited', exist_ok=True)
+os.makedirs('/data/temp', exist_ok=True)
+os.makedirs('/var/www/clips', exist_ok=True)
+os.makedirs('/data/assets', exist_ok=True)
+
+# Premium brand colors
+BRAND_COLORS = {
+    'gold': '#FFD700',
+    'white': '#FFFFFF',
+    'black': '#000000',
+    'accent': '#FF0050',  # Red accent for important words
+    'shadow': '#000000CC'
+}
+
+def copy_to_public(file_path):
+    """Copy file to public directory and return URL"""
+    try:
+        filename = os.path.basename(file_path)
+        public_path = f"/var/www/clips/{filename}"
+        
+        logging.info(f"Copying {file_path} to {public_path}")
+        os.makedirs('/var/www/clips', exist_ok=True)
+        shutil.copy2(file_path, public_path)
+        
+        if os.path.exists(public_path):
+            logging.info(f"Successfully copied to {public_path}")
+            return f"http://165.227.84.254:8888/clips/{filename}"
+        else:
+            logging.error(f"Failed to copy to {public_path}")
+            return None
+    except Exception as e:
+        logging.error(f"Error in copy_to_public: {str(e)}")
+        return None
+
+def detect_content_style(text):
+    """Detect content style based on transcript"""
+    text_lower = text.lower()
+    
+    # Style detection
+    if any(word in text_lower for word in ['money', 'rich', 'millionaire', 'earn', 'profit', '10k', '100k']):
+        return 'money'
+    elif any(word in text_lower for word in ['ai', 'technology', 'future', 'innovation', 'code']):
+        return 'tech'
+    elif any(word in text_lower for word in ['mindset', 'discipline', 'motivation', 'success', 'goal']):
+        return 'motivation'
+    elif any(word in text_lower for word in ['tiktok', 'viral', 'trend', 'hack', 'trick']):
+        return 'viral'
+    else:
+        return 'general'
+
+def get_music_for_style(style):
+    """Get appropriate background music based on content style"""
+    music_mapping = {
+        'money': ['/media_upload/music/hard_trap_beat.mp3', '/media_upload/music/luxury_instrumental.mp3'],
+        'tech': ['/media_upload/music/electronic_ambient.mp3', '/media_upload/music/future_bass.mp3'],
+        'motivation': ['/media_upload/music/epic_motivational.mp3', '/media_upload/music/inspiring_piano.mp3'],
+        'viral': ['/media_upload/music/tiktok_trending.mp3', '/media_upload/music/upbeat_pop.mp3'],
+        'general': ['/media_upload/music/soft_background.mp3', '/media_upload/music/neutral_ambient.mp3']
+    }
+    
+    # Get music files for style
+    music_files = music_mapping.get(style, music_mapping['general'])
+    
+    # Check which files exist
+    existing_files = [f for f in music_files if os.path.exists(f)]
+    
+    if existing_files:
+        return random.choice(existing_files)
+    
+    # Fallback to any available music
+    all_music = glob.glob('/media_upload/music/*.mp3')
+    return random.choice(all_music) if all_music else None
+
+def create_word_by_word_subtitles(transcript, output_path, style='modern'):
+    """Create modern word-by-word subtitles like The Diary Of A CEO"""
+    segments = transcript.get('segments', [])
+    
+    if not segments:
+        # Create empty subtitle file
+        with open(output_path, 'w') as f:
+            f.write("")
+        return output_path
+    
+    subtitle_entries = []
+    subtitle_index = 1
+    
+    for segment in segments:
+        text = segment.get('text', '').strip()
+        if not text:
+            continue
+            
+        words = text.split()
+        start_time = segment.get('start', 0)
+        end_time = segment.get('end', start_time + 2)
+        
+        # Calculate time per word
+        segment_duration = end_time - start_time
+        time_per_word = segment_duration / len(words) if words else 0.5
+        
+        # Create groups of 2-3 words for display
+        word_groups = []
+        current_group = []
+        
+        for word in words:
+            current_group.append(word)
+            if len(current_group) >= 2 or word.endswith(('.', '!', '?', ',')):
+                word_groups.append(' '.join(current_group))
+                current_group = []
+        
+        if current_group:
+            word_groups.append(' '.join(current_group))
+        
+        # Create subtitle entries
+        current_time = start_time
+        
+        for group in word_groups:
+            group_duration = time_per_word * len(group.split())
+            
+            # Format time for SRT
+            start_srt = format_time_srt(current_time)
+            end_srt = format_time_srt(current_time + group_duration)
+            
+            # Style the text
+            styled_text = style_subtitle_text(group, style)
+            
+            subtitle_entries.append({
+                'index': subtitle_index,
+                'start': start_srt,
+                'end': end_srt,
+                'text': styled_text
+            })
+            
+            subtitle_index += 1
+            current_time += group_duration
+    
+    # Write SRT file
+    with open(output_path, 'w', encoding='utf-8') as f:
+        for entry in subtitle_entries:
+            f.write(f"{entry['index']}\n")
+            f.write(f"{entry['start']} --> {entry['end']}\n")
+            f.write(f"{entry['text']}\n\n")
+    
+    return output_path
+
+def format_time_srt(seconds):
+    """Convert seconds to SRT time format"""
+    hours = int(seconds // 3600)
+    minutes = int((seconds % 3600) // 60)
+    secs = int(seconds % 60)
+    millis = int((seconds % 1) * 1000)
+    return f"{hours:02d}:{minutes:02d}:{secs:02d},{millis:03d}"
+
+def style_subtitle_text(text, style):
+    """Style subtitle text with emphasis on key words"""
+    # Words to emphasize
+    emphasis_words = [
+        'money', 'rich', 'million', 'billion', '10k', '100k',
+        'never', 'always', 'must', 'secret', 'truth',
+        'ai', 'hack', 'viral', 'how', 'why'
+    ]
+    
+    # Check if any emphasis word is in text
+    text_lower = text.lower()
+    for word in emphasis_words:
+        if word in text_lower:
+            # Return text as is - styling will be done in FFmpeg
+            return text.upper()
+    
+    return text
+
+def create_premium_edit(clip_info, transcript, style='auto'):
+    """Create premium quality edit with modern viral style"""
+    input_path = clip_info['path']
+    clip_index = clip_info.get('index', 1)
+    output_path = f"/data/edited/premium_clip_{clip_index:02d}.mp4"
+    
+    # Detect content style if auto
+    if style == 'auto':
+        full_text = ' '.join([s.get('text', '') for s in transcript.get('segments', [])])
+        style = detect_content_style(full_text)
+        logging.info(f"Auto-detected style: {style}")
+    
+    # Get appropriate music
+    music_path = get_music_for_style(style)
+    
+    # Create modern subtitles
+    srt_path = f"/data/temp/modern_subs_{clip_index}.srt"
+    create_word_by_word_subtitles(transcript, srt_path, style)
+    
+    # Build FFmpeg command
+    inputs = [f'-i "{input_path}"']
+    
+    if music_path and os.path.exists(music_path):
+        inputs.append(f'-i "{music_path}"')
+        # Audio mix: voice at 85%, music at 15%
+        audio_filter = '[0:a]volume=0.85[a1];[1:a]volume=0.15[a2];[a1][a2]amix=inputs=2:duration=first[aout]'
+        audio_map = '-map "[aout]"'
+    else:
+        audio_filter = ''
+        audio_map = '-map 0:a'
+    
+    # Video filters for premium look
+    video_filters = []
+    
+    # 1. Scale to 9:16 vertical format (1080x1920)
+    video_filters.append('scale=1080:1920:force_original_aspect_ratio=decrease')
+    video_filters.append('pad=1080:1920:(ow-iw)/2:(oh-ih)/2:black')
+    
+    # 2. Premium color grading
+    video_filters.append('eq=brightness=0.05:saturation=1.2:contrast=1.15')
+    
+    # 3. Slight sharpening for crisp look
+    video_filters.append('unsharp=5:5:0.8:3:3:0.4')
+    
+    # 4. Subtle vignette for focus
+    video_filters.append('vignette=PI/6')
+    
+    # Combine video filters
+    video_filter_str = ','.join(video_filters)
+    
+    # Subtitle styling - LARGE CENTERED SUBTITLES
+    subtitle_style = (
+        "FontName=Arial Black,"
+        "FontSize=48,"  # Very large
+        "PrimaryColour=&HFFFFFF,"  # White
+        "OutlineColour=&H000000,"  # Black outline
+        "BackColour=&H80000000,"  # Semi-transparent background
+        "BorderStyle=3,"
+        "Outline=3,"  # Thick outline
+        "Shadow=2,"
+        "MarginV=400,"  # Centered vertically
+        "Alignment=2"  # Center alignment
+    )
+    
+    # Add subtitles to video filter
+    if os.path.exists(srt_path) and os.path.getsize(srt_path) > 0:
+        video_filter_str += f",subtitles={srt_path}:force_style='{subtitle_style}'"
+    
+    # Build final command
+    cmd = ' '.join(inputs)
+    
+    if audio_filter:
+        cmd += f' -filter_complex "{audio_filter};[0:v]{video_filter_str}[vout]"'
+        cmd += f' -map "[vout]" {audio_map}'
+    else:
+        cmd += f' -vf "{video_filter_str}"'
+        cmd += ' -map 0:v -map 0:a'
+    
+    # Output settings for high quality
+    cmd += f''' -c:v libx264 -preset medium -crf 20 \
+    -profile:v high -level 4.2 \
+    -c:a aac -b:a 192k -ar 48000 \
+    -pix_fmt yuv420p \
+    -movflags +faststart \
+    -metadata title="Premium Short #{clip_index}" \
+    -metadata comment="Created with Premium Editor" \
+    -y "{output_path}"'''
+    
+    # Full ffmpeg command
+    full_cmd = f'ffmpeg {cmd}'
+    
+    logging.info(f"Creating premium edit for clip {clip_index} with style: {style}")
+    
+    # Execute
+    result = subprocess.run(full_cmd, shell=True, capture_output=True, text=True)
+    
+    if result.returncode != 0:
+        logging.error(f"FFmpeg error: {result.stderr}")
+        # Try simpler version
+        return create_simple_viral_edit(clip_info, transcript)
+    
+    # Add premium overlay elements (logo, progress bar, etc.)
+    final_output = add_premium_elements(output_path, clip_index, style)
+    
+    # Clean up
+    if os.path.exists(srt_path):
+        os.remove(srt_path)
+    
+    return final_output
+
+def add_premium_elements(video_path, clip_index, style):
+    """Add premium brand elements like logo and progress bar"""
+    output_path = video_path.replace('.mp4', '_branded.mp4')
+    
+    # For now, just copy the file
+    # In production, you would add:
+    # - Brand logo/watermark
+    # - Progress bar at top
+    # - Style-specific overlays
+    shutil.copy2(video_path, output_path)
+    
+    return output_path
+
+def create_simple_viral_edit(clip_info, transcript):
+    """Fallback simple edit that still looks professional"""
+    input_path = clip_info['path']
+    clip_index = clip_info.get('index', 1)
+    output_path = f"/data/edited/viral_clip_{clip_index:02d}_simple.mp4"
+    
+    # Create simple centered subtitles
+    srt_path = f"/data/temp/simple_subs_{clip_index}.srt"
+    create_word_by_word_subtitles(transcript, srt_path, 'simple')
+    
+    # Simple but effective command
+    cmd = f'''ffmpeg -y -i "{input_path}" \
+    -vf "scale=1080:1920:force_original_aspect_ratio=decrease,\
+    pad=1080:1920:(ow-iw)/2:(oh-ih)/2:black,\
+    eq=brightness=0.05:saturation=1.1,\
+    subtitles={srt_path}:force_style='FontName=Arial,FontSize=42,\
+    PrimaryColour=&HFFFFFF,OutlineColour=&H000000,BorderStyle=3,\
+    Outline=2,MarginV=400,Alignment=2'" \
+    -c:v libx264 -preset fast -crf 23 \
+    -c:a aac -b:a 192k \
+    -ar 48000 \
+    "{output_path}"'''
+    
+    subprocess.run(cmd, shell=True)
+    
+    if os.path.exists(srt_path):
+        os.remove(srt_path)
+    
+    return output_path
+
+@app.route('/health', methods=['GET'])
+def health():
+    return jsonify({
+        'status': 'ok',
+        'service': 'premium-video-editor',
+        'features': [
+            'modern_subtitles',
+            'premium_styling',
+            'auto_style_detection',
+            'viral_optimization'
+        ]
+    })
+
+@app.route('/edit-shorts', methods=['POST'])
+def edit_shorts():
+    """Create premium viral-style short videos"""
+    try:
+        data = request.json
+        clips = data.get('clips', [])
+        transcript = data.get('transcript', {})
+        style = data.get('style', 'auto')
+        
+        if not clips:
+            return jsonify({'error': 'No clips provided'}), 400
+        
+        edited_videos = []
+        
+        for clip in clips:
+            if isinstance(clip, str):
+                clip_info = {
+                    'path': clip,
+                    'index': len(edited_videos) + 1
+                }
+            else:
+                clip_info = clip
+            
+            try:
+                # Create premium edit
+                output_path = create_premium_edit(clip_info, transcript, style)
+                
+                if os.path.exists(output_path):
+                    # Copy to public directory
+                    public_url = copy_to_public(output_path)
+                    
+                    # Get file size
+                    file_size = os.path.getsize(output_path) / (1024 * 1024)  # MB
+                    
+                    edited_videos.append({
+                        'path': output_path,
+                        'public_url': public_url,
+                        'original': clip_info['path'],
+                        'index': clip_info.get('index', len(edited_videos) + 1),
+                        'style': style,
+                        'size_mb': round(file_size, 2)
+                    })
+                    
+                    logging.info(f"Premium edit created: {output_path}")
+                    
+            except Exception as e:
+                logging.error(f"Error editing clip: {str(e)}")
+                continue
+        
+        return jsonify({
+            'status': 'success',
+            'edited_clips': edited_videos,
+            'total_edited': len(edited_videos),
+            'style_used': style
+        }), 200
+        
+    except Exception as e:
+        logging.error(f"Error in edit_shorts: {str(e)}")
+        import traceback
+        logging.error(traceback.format_exc())
+        return jsonify({'error': str(e)}), 500
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=3003, threaded=True)

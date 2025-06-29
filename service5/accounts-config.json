@@ -1,0 +1,334 @@
+{
+  "platforms": {
+    "tiktok": {
+      "accounts": [
+        {
+          "id": "tiktok_01",
+          "username": "kyza104545@gmail.com",
+          "cookies": "sessionid=07b4f549d9ed4c2d0699af022f3be5e2; sid_guard=07b4f549d9ed4c2d0699af022f3be5e2%7C1749724964%7C15551994%7CTue%2C+09-Dec-2025+10%3A42%3A38+GMT; sid_tt=07b4f549d9ed4c2d0699af022f3be5e2; sid_ucp_v1=1.0.0-KGJiYTY1ZGYyOTNlOTJmNWJlMDVjZjllYmU3N2IyODUwMTAxMTk0NzYKGQigiLO22aXDvmYQpN6qwgYYsws4CEASSAQQBRoEbm8xYSIgMDdiNGY1NDlkOWVkNGMyZDA2OTlhZjAyMmYzYmU1ZTI; msToken=o9gUNOTgrudAackQZd1PrqNLav-HilkdAhZfIH_0ZADYNydGKr1FmRILfrGFkfwnldslYxg__zhilAAye_UY-6N8VBkDwUBFvJv_weCKRvm7QQQVOcLMQbcZ95DUD3BedD_Swg6CfLsjo53CS5D19DsWHg=="
+        },
+        {
+          "id": "tiktok_02",
+          "username": "badgirlsbusinesspage@gmail.com",
+          "cookies": "sessionid=0ec0e2c15bb3e0cfb8e3e48c39c4a666; sid_guard=0ec0e2c15bb3e0cfb8e3e48c39c4a666%7C1749725024%7C15551999%7CTue%2C+09-Dec-2025+10%3A43%3A43+GMT; sid_tt=0ec0e2c15bb3e0cfb8e3e48c39c4a666; sid_ucp_v1=1.0.0-KDY0M2Y0NTJmNjUyMmY2YWU1NDRmNTBmNGVkYTQ5MTZlMjJhZDE5NDQKGQigiLO22aXDvmYQ4OyqwgYYsws4CEASSAQQBRoEbm8xYSIgMGVjMGUyYzE1YmIzZTBjZmI4ZTNlNDhjMzljNGE2NjY; msToken=6s3hv9I8Y5RzI6jJEoJVLKWKCClGT_YRD3g1iXHpHnCyMD9Kq3jJEMJGdZnQsG9q0VQXupqfBXYCGTpLO8hklQN3ZPxNdxGqPdEWJ0fHPzJ3uSJJDXEuP1fKJOXnCdeDUBgxY0Y0"
+        },
+        {
+          "id": "tiktok_03",
+          "username": "creacontent.business@gmail.com",
+          "cookies": "sessionid=b93b5032b9bb4efa9e9f17cf8d7b8c19; sid_guard=b93b5032b9bb4efa9e9f17cf8d7b8c19%7C1749725083%7C15551999%7CTue%2C+09-Dec-2025+10%3A44%3A42+GMT; sid_tt=b93b5032b9bb4efa9e9f17cf8d7b8c19; sid_ucp_v1=1.0.0-KDhhMjQ0YjJiNjBjYjQ1YWVjZGIzMWE3MDcxMzFhZTE1YjhlNDk1MzgKGQigiLO22aXDvmYQm_OqwgYYsws4CEASSAQQBRoEbm8xYSIgYjkzYjUwMzJiOWJiNGVmYTllOWYxN2NmOGQ3YjhjMTk; msToken=h87v9I8Y5RzI6jJEoJVLKWKCClGT_YRD3g1iXHpHnCyMD9Kq3jJEMJGdZnQsG9q0VQXupqfBXYCGTpLO8hklQN3ZPxNdxGqPdEWJ0fHPzJ3uSJJDXEuP1fKJOXnCdeDUBgxY0Y1"
+        },
+        {
+          "id": "tiktok_04",
+          "username": "badgirlbusinesspage@gmail.com",
+          "cookies": "sessionid=fbed0fb92a6df396b0a95b4ee96b4e09; sid_guard=fbed0fb92a6df396b0a95b4ee96b4e09%7C1749725147%7C15551999%7CTue%2C+09-Dec-2025+10%3A45%3A46+GMT; sid_tt=fbed0fb92a6df396b0a95b4ee96b4e09; sid_ucp_v1=1.0.0-KDQ5ZDZiMDcxOGYxNzU2NjEwMTdmNmU3MThiNGFiMmJhNjQ1MzU1YmQKGQigiLO22aXDvmYQ2_aqwgYYsws4CEASSAQQBRoEbm8xYSIgZmJlZDBmYjkyYTZkZjM5NmIwYTk1YjRlZTk2YjRlMDk; msToken=j45v9I8Y5RzI6jJEoJVLKWKCClGT_YRD3g1iXHpHnCyMD9Kq3jJEMJGdZnQsG9q0VQXupqfBXYCGTpLO8hklQN3ZPxNdxGqPdEWJ0fHPzJ3uSJJDXEuP1fKJOXnCdeDUBgxY0Y2"
+        },
+        {
+          "id": "tiktok_05",
+          "username": "badgirlscontactpage@gmail.com",
+          "cookies": "sessionid=4de72f7b63fb99c11b91abc079cc6a4a; sid_guard=4de72f7b63fb99c11b91abc079cc6a4a%7C1749725191%7C15552000%7CTue%2C+09-Dec-2025+10%3A46%3A30+GMT; sid_tt=4de72f7b63fb99c11b91abc079cc6a4a; sid_ucp_v1=1.0.0-KGQ2Mzg1NjY5NTllZGI3M2E2NDM0YmYwZGRmNjNhMWU5NmVkYmY5NTcKGQigiLO22aXDvmYQh_mqwgYYsws4CEASSAQQBRoEbm8xYSIgNGRlNzJmN2I2M2ZiOTljMTFiOTFhYmMwNzljYzZhNGE; msToken=k23v9I8Y5RzI6jJEoJVLKWKCClGT_YRD3g1iXHpHnCyMD9Kq3jJEMJGdZnQsG9q0VQXupqfBXYCGTpLO8hklQN3ZPxNdxGqPdEWJ0fHPzJ3uSJJDXEuP1fKJOXnCdeDUBgxY0Y3"
+        },
+        {
+          "id": "tiktok_06",
+          "username": "badgirlxcontactpage@gmail.com",
+          "cookies": "sessionid=d27c4e8d90bbceb1c14e6dd48f4e4e96; sid_guard=d27c4e8d90bbceb1c14e6dd48f4e4e96%7C1749725241%7C15552000%7CTue%2C+09-Dec-2025+10%3A47%3A20+GMT; sid_tt=d27c4e8d90bbceb1c14e6dd48f4e4e96; sid_ucp_v1=1.0.0-KGM5ODNmYmJlNmZjMTkxOTJmNmZhNmM2NzhlODIxNWZmNmI5NzMxMTgKGQigiLO22aXDvmYQuYCrwgYYsws4CEASSAQQBRoEbm8xYSIgZDI3YzRlOGQ5MGJiY2ViMWMxNGU2ZGQ0OGY0ZTRlOTY; msToken=l89v9I8Y5RzI6jJEoJVLKWKCClGT_YRD3g1iXHpHnCyMD9Kq3jJEMJGdZnQsG9q0VQXupqfBXYCGTpLO8hklQN3ZPxNdxGqPdEWJ0fHPzJ3uSJJDXEuP1fKJOXnCdeDUBgxY0Y4"
+        },
+        {
+          "id": "tiktok_07",
+          "username": "hustlerscastclips@gmail.com",
+          "cookies": "sessionid=33c2b7d6e83b6a32a1b88b9dc3a7e1e3; sid_guard=33c2b7d6e83b6a32a1b88b9dc3a7e1e3%7C1749725302%7C15552000%7CTue%2C+09-Dec-2025+10%3A48%3A21+GMT; sid_tt=33c2b7d6e83b6a32a1b88b9dc3a7e1e3; sid_ucp_v1=1.0.0-KDE2ZTNmNWU1ZjAzZWQ0MjEwNzY5MzNjNTE0OGQzZjI1YWJhMDQ4ODgKGQigiLO22aXDvmYQ9oKrwgYYsws4CEASSAQQBRoEbm8xYSIgMzNjMmI3ZDZlODNiNmEzMmExYjg4YjlkYzNhN2UxZTM; msToken=m67v9I8Y5RzI6jJEoJVLKWKCClGT_YRD3g1iXHpHnCyMD9Kq3jJEMJGdZnQsG9q0VQXupqfBXYCGTpLO8hklQN3ZPxNdxGqPdEWJ0fHPzJ3uSJJDXEuP1fKJOXnCdeDUBgxY0Y5"
+        },
+        {
+          "id": "tiktok_08",
+          "username": "aiimgpage@gmail.com",
+          "cookies": "sessionid=6e9cd0eccc5a9cc1fe3f383b529b89f0; sid_guard=6e9cd0eccc5a9cc1fe3f383b529b89f0%7C1749725349%7C15551999%7CTue%2C+09-Dec-2025+10%3A49%3A08+GMT; sid_tt=6e9cd0eccc5a9cc1fe3f383b529b89f0; sid_ucp_v1=1.0.0-KGFmMmJhOGMzMzJjMDI0ZGJjMjZjZDgzYTc2ZmYxNjZkOGFhMmU5ZjAKGQigiLO22aXDvmYQpYSrwgYYsws4CEASSAQQBRoEbm8xYSIgNmU5Y2QwZWNjYzVhOWNjMWZlM2YzODNiNTI5Yjg5ZjA; msToken=n45v9I8Y5RzI6jJEoJVLKWKCClGT_YRD3g1iXHpHnCyMD9Kq3jJEMJGdZnQsG9q0VQXupqfBXYCGTpLO8hklQN3ZPxNdxGqPdEWJ0fHPzJ3uSJJDXEuP1fKJOXnCdeDUBgxY0Y6"
+        },
+        {
+          "id": "tiktok_09",
+          "username": "aigenspage@gmail.com",
+          "cookies": "sessionid=1c1e4a4b6aa7fb85e2e666a5f7e8a16f; sid_guard=1c1e4a4b6aa7fb85e2e666a5f7e8a16f%7C1749725403%7C15552000%7CTue%2C+09-Dec-2025+10%3A50%3A02+GMT; sid_tt=1c1e4a4b6aa7fb85e2e666a5f7e8a16f; sid_ucp_v1=1.0.0-KDQ5NTg1ZTBkNjM4MGVjMGM3YTQ5MWQ5ODFmN2Y4ODg5YTIzNzI0OTgKGQigiLO22aXDvmYQ24WrwgYYsws4CEASSAQQBRoEbm8xYSIgMWMxZTRhNGI2YWE3ZmI4NWUyZTY2NmE1ZjdlOGExNmY; msToken=o23v9I8Y5RzI6jJEoJVLKWKCClGT_YRD3g1iXHpHnCyMD9Kq3jJEMJGdZnQsG9q0VQXupqfBXYCGTpLO8hklQN3ZPxNdxGqPdEWJ0fHPzJ3uSJJDXEuP1fKJOXnCdeDUBgxY0Y7"
+        },
+        {
+          "id": "tiktok_10",
+          "username": "top5compilationpage@gmail.com",
+          "cookies": "sessionid=49a8a8ae1ae4f85c03c3bf996b5cf6c0; sid_guard=49a8a8ae1ae4f85c03c3bf996b5cf6c0%7C1749725455%7C15552000%7CTue%2C+09-Dec-2025+10%3A50%3A54+GMT; sid_tt=49a8a8ae1ae4f85c03c3bf996b5cf6c0; sid_ucp_v1=1.0.0-KDkyODY2Yjg5OWY0ODY3YWE5ZjQxMjNjMjhhNzc1YjE0ZWZjZmE3YTgKGQigiLO22aXDvmYQj4erwgYYsws4CEASSAQQBRoEbm8xYSIgNDlhOGE4YWUxYWU0Zjg1YzAzYzNiZjk5NmI1Y2Y2YzA; msToken=p90v9I8Y5RzI6jJEoJVLKWKCClGT_YRD3g1iXHpHnCyMD9Kq3jJEMJGdZnQsG9q0VQXupqfBXYCGTpLO8hklQN3ZPxNdxGqPdEWJ0fHPzJ3uSJJDXEuP1fKJOXnCdeDUBgxY0Y8"
+        }
+      ]
+    },
+    "instagram": {
+      "accounts": [
+        {
+          "id": "insta_01",
+          "username": "vladkuzmenkosxy",
+          "password": "Kyza2007@",
+          "cookies": "{\"sessionid\": \"67928444027%3AjXvlFEKhJJqsPA%3A28%3AAYeQ7GqJMXKQJvPCOGQCLsjyXj6SxLvxXEI5Jjp49Q\", \"ds_user_id\": \"67928444027\", \"csrftoken\": \"aA5PjGGvJRBBs7F7d1WdHu6cRwxuQOXg\"}"
+        },
+        {
+          "id": "insta_02",
+          "username": "vladkuzmenkocom",
+          "password": "Kyza2007@",
+          "cookies": "{\"sessionid\": \"69206486223%3AMKLo1XsVgAoUDl%3A28%3AAYdFjOmGnJgjE2Fk6HLzNt1FMGFSG3KcqaKqJvxIdg\", \"ds_user_id\": \"69206486223\", \"csrftoken\": \"IvfitXyPINcLzFYRLU2oNL9CkYiZP1Py\"}"
+        },
+        {
+          "id": "insta_03",
+          "username": "vladkuzmenkoclip",
+          "password": "Kyza2007@",
+          "cookies": "{\"sessionid\": \"69244653107%3APJnK2wQEJBJOTA%3A14%3AAYfKLRz8W8VQuwY8vN2S0HO1U_06Z1MJa-FRzaKklg\", \"ds_user_id\": \"69244653107\", \"csrftoken\": \"DcOdLWUOoXm6aXhAJqXTLdRyf9F1Vktx\"}"
+        },
+        {
+          "id": "insta_04",
+          "username": "vladkuzmenkoshort",
+          "password": "Kyza2007@",
+          "cookies": "{\"sessionid\": \"69234536745%3A3VPq0xBiY5n2v4%3A11%3AAYcHPLY0tAA7AcrCJOKj1AQFRZCzp31VnhtdHiEaQQ\", \"ds_user_id\": \"69234536745\", \"csrftoken\": \"4f0Vn5Nt0fxcSLk2JOSkEQYj3hKU38xj\"}"
+        },
+        {
+          "id": "insta_05",
+          "username": "vladkuzmenkoreels",
+          "password": "Kyza2007@",
+          "cookies": "{\"sessionid\": \"69244719066%3AQW7Jz6UhN2w0JC%3A11%3AAYefrxdLMGJBOdLTEAzUOQl7eRgOQxl5LEKD6O1AWw\", \"ds_user_id\": \"69244719066\", \"csrftoken\": \"OmuOu0PJCpFfhjXzJQD7OwJJKiCCUwTN\"}"
+        },
+        {
+          "id": "insta_06",
+          "username": "vladkuzmenkospy",
+          "password": "Kyza2007@",
+          "cookies": "{\"sessionid\": \"69234575227%3AKcCCOGBiHIkJW9%3A11%3AAYeT7J_cQuOQ8dP46kZ6KcBOHO84ZxKW2JJ2lAK_jQ\", \"ds_user_id\": \"69234575227\", \"csrftoken\": \"EQvCJOm0lfBhKmCwKKLCJ8CJQEQCKQyV\"}"
+        },
+        {
+          "id": "insta_07",
+          "username": "vladkuzmenkospeech",
+          "password": "Kyza2007@",
+          "cookies": "{\"sessionid\": \"69234542439%3AHjHBOGJhjkO3BO%3A9%3AAYe8LzECOKJ8jj6QGkK8K6Q8HQKLJjkCCjjK8HiQGg\", \"ds_user_id\": \"69234542439\", \"csrftoken\": \"JJHhkJKOCCHiQOmJJKOCJHiJjOCJKiQJ\"}"
+        },
+        {
+          "id": "insta_08",
+          "username": "vladkuzmenkox",
+          "password": "Kyza2007@",
+          "cookies": "{\"sessionid\": \"67928587090%3AJXOQJHIjoCJJQB%3A21%3AAYdQOCJKOQJ8OJ8JQO8QOJ8QOJ8QO8JQO8JQOJ8Qg\", \"ds_user_id\": \"67928587090\", \"csrftoken\": \"JQO8JQO8JQO8JQO8JQO8JQO8JQO8JQOJ\"}"
+        },
+        {
+          "id": "insta_09",
+          "username": "vladkuzmenkofan",
+          "password": "Kyza2007@",
+          "cookies": "{\"sessionid\": \"69244815892%3AKOCJQOJCOJQOCj%3A5%3AAYfJOCJQOJCOJQOCJQOCJQOCJQOCJQOCJQOCJQOCg\", \"ds_user_id\": \"69244815892\", \"csrftoken\": \"JQOCJQOCJQOCJQOCJQOCJQOCJQOCJQOC\"}"
+        },
+        {
+          "id": "insta_10",
+          "username": "vladkuzmenkopage",
+          "password": "Kyza2007@",
+          "cookies": "{\"sessionid\": \"69234651490%3AOCJQOCJQOCJQOj%3A12%3AAYeOCJQOCJQOCJQOCJQOCJQOCJQOCJQOCJQOCJQOg\", \"ds_user_id\": \"69234651490\", \"csrftoken\": \"QOCJQOCJQOCJQOCJQOCJQOCJQOCJQOCJ\"}"
+        }
+      ]
+    },
+    "youtube": {
+      "accounts": [
+        {
+          "id": "yt_01",
+          "username": "kuzya.universe@gmail.com",
+          "oauth2_credentials": "{\"access_token\": \"ya29.a0AW4XtxioE8_hB0P9r75mpNNtppo-k0vOComUmUHoLdCX12yMpWoO4ar35rANd0tJRPu2tw3bALswLW_yDDap0kB9z_xZ7pN2DYsqgTGCSf-zV1lZk48rMtQHpAKHvByZHtecWG-_lYSw8QgKnlsb6b9y36K-ar6TqNsbiiPIaCgYKAXMSARISFQHGX2MiU2xKdRwTVAsgM64zaaSKFA0175\", \"refresh_token\": \"1//04bfYs-A2ZBIPCgYIARAAGAQSNwF-L9Iru5LivC5KZuzjw8OrY215eqW0j1vq3XqRWrXBCtRYcfI5wmTaCvyobLzlSOWK0esWu7s\", \"token_uri\": \"https://oauth2.googleapis.com/token\", \"client_id\": \"407408718192.apps.googleusercontent.com\", \"client_secret\": \"hzanTai6fzSer7g45234b\"}"
+        },
+        {
+          "id": "yt_02",
+          "username": "kyza1045@gmail.com",
+          "oauth2_credentials": "{\"access_token\": \"ya29.a0AW4Xtxg43SQqQPPBRt1vb6MqnJvNewX-_TcPcHMbjepbfqtpHMLjdIp8_CLA6w8_9He5imkmpflePKceTrazuA1u8ksZbEXTGDS0uBxALBschjyy02SjJq35waE0pz7loKrsjwlStaMvPZkidTeRkrP21HjyazpiEUYKVuJhaCgYKAToSARESFQHGX2MigipTShyP61skLv0YU8CniQ0175\", \"refresh_token\": \"1//04LRT8d3TP7o-CgYIARAAGAQSNwF-L9IrJ6q7HgH0UoNb9bpzSqAe8Jw8ZV4LlODxyh7TYFUoYHY-5iEl-KiRNm7AvzoTV32gU3g\", \"token_uri\": \"https://oauth2.googleapis.com/token\", \"client_id\": \"407408718192.apps.googleusercontent.com\", \"client_secret\": \"hzanTai6fzSer7g45234b\"}"
+        },
+        {
+          "id": "yt_03",
+          "username": "creacontent.business@gmail.com",
+          "oauth2_credentials": "{\"access_token\": \"ya29.a0AW4XtxhCcousVcDwzgc9_UxHhzg-qLCJ6B2DRG_yS7rqGFhKv6clCVTzCGOlNxYadGZvFeEOCjzOiGQupvFDp7-qSFs0Sxvq1vyTdFsLOlOSv-xBNGbRWGI0A7u0LiIfAKnp6zi3z5vR1AAjXu2vmdJdhTBG4x6jf7TSfE3taCgYKAXESARcSFQHGX2Mi9UF3dfpSgg6aJrRW6NsRfA0175\", \"refresh_token\": \"1//0436OQzIE4YVBCgYIARAAGAQSNwF-L9IrCCJeO84Z3h9W6jEM0WafYydaR2WO9SX4J-GiAUoI1jbWNGaDatiSZTMmeT-TK0aSkuY\", \"token_uri\": \"https://oauth2.googleapis.com/token\", \"client_id\": \"407408718192.apps.googleusercontent.com\", \"client_secret\": \"hzanTai6fzSer7g45234b\"}"
+        },
+        {
+          "id": "yt_04",
+          "username": "kyza104545@gmail.com",
+          "oauth2_credentials": "{\"access_token\": \"ya29.a0AW4XtxjkYVydcOmE1F80HGW6K80zXSO1LqN6XsPiExmsfNDvMQC8SqFfMJF6Fl4X25_u87-wtlWFy2P-oTV0zyGJUaIbSkvoAtIrTbO9QqfIKBwOWgQGQ5eHggGpexXby4oSV94z6eWCwOs62yo4D0mKaoFnxZ_3RANvkYOwaCgYKAdsSARMSFQHGX2MiL0Tx6nhsEvaxZ75HWel3cg0175\", \"refresh_token\": \"1//04XtPnPExY8h2CgYIARAAGAQSNwF-L9Ir8FU4vcU7Js_v2pK7-qolxG5HvtAMKBeJeZygCFtIwC-M7q-R2UVVrp5zIMPUl926duI\", \"token_uri\": \"https://oauth2.googleapis.com/token\", \"client_id\": \"407408718192.apps.googleusercontent.com\", \"client_secret\": \"hzanTai6fzSer7g45234b\"}"
+        },
+        {
+          "id": "yt_05",
+          "username": "normadfilms@gmail.com",
+          "oauth2_credentials": "{\"access_token\": \"ya29.a0AW4XtximLcdaKOnwgtKtcoe3AL8VZl8Nl3jfhaMsn08j0zAZwe61SPr7V4_IVeB1pRPhGLBac8BmJbVAuLIApEeQzfVsKCcC0RgvT-brljcsZ6WJBDUq5SE7Fn9goQk5D83bs0u7sDHa1DEkKo8-Nts2ddu1sKLakrwcQ5_iaCgYKAdgSARUSFQHGX2Mi8kx786G5Vd228hqT2jVRag0175\", \"refresh_token\": \"1//04V_dnwrA49-nCgYIARAAGAQSNwF-L9IrGwY3qB4ITBOIqNxlGiuzvqzkshOFvkLk4NVmo8_hAlnPfrMPoGQvOxmv9F1DsMKS-0Q\", \"token_uri\": \"https://oauth2.googleapis.com/token\", \"client_id\": \"407408718192.apps.googleusercontent.com\", \"client_secret\": \"hzanTai6fzSer7g45234b\"}"
+        },
+        {
+          "id": "yt_06",
+          "username": "badgirlbusinesspage@gmail.com",
+          "oauth2_credentials": "{\"access_token\": \"ya29.a0AW4Xtxi-_MP4yycG4Qi_3MwBX20qbuLm1jMqUunrcFGO1peRsLqiIPdATWh3s45KCERS1xI21682AjcN-ev8LzDswHYRIMDr4Jt0lymUC_LAT9L9t94TqaaJlJr3vFTERAQxD0rKuCE1GdFfAQSa_NIu0xSnf4ElR5ZUXRYKaCgYKAfsSARcSFQHGX2MiRwvC7bsMGEairv0piv87ew0175\", \"refresh_token\": \"1//04M6q8t2aSgmTCgYIARAAGAQSNwF-L9IrdToQ_CzkJVNxonB9PqhDRd9Q7PpAqEL8erndTRpHPKNR_UOwF28eKDEb9tpqP_cKDh8\", \"token_uri\": \"https://oauth2.googleapis.com/token\", \"client_id\": \"407408718192.apps.googleusercontent.com\", \"client_secret\": \"hzanTai6fzSer7g45234b\"}"
+        },
+        {
+          "id": "yt_07",
+          "username": "badgirlscontactpage@gmail.com",
+          "oauth2_credentials": "{\"access_token\": \"ya29.a0AW4Xtxh8vA8JfK3tM1RKZ1duhmg4Zvm3ogth_ZoLJOVFtghy0n84DLEQ482yFtDIzXLLxQ6Kd0cRUyHLq74odSL9UUFbPclkTZUJ0hmpqc3zGJ2pDpFRV0pvl3XujUa-8OhPkj6kRoLazj7T7VweQXXkHy7oFn-0tilEXTvxaCgYKAUcSARYSFQHGX2Mi52guvYdSxWFIP88zZX3vpQ0175\", \"refresh_token\": \"1//04OudTLSQMKT0CgYIARAAGAQSNwF-L9IrWalarMBxDehWtuXdLEOYHjBIOy14BI5_KD76Dp17bzMhGWx1IARCGpQjFOAMraUn6gQ\", \"token_uri\": \"https://oauth2.googleapis.com/token\", \"client_id\": \"407408718192.apps.googleusercontent.com\", \"client_secret\": \"hzanTai6fzSer7g45234b\"}"
+        },
+        {
+          "id": "yt_08",
+          "username": "badgirlxcontactpage@gmail.com",
+          "oauth2_credentials": "{\"access_token\": \"ya29.a0AW4XtxhSuyPaD3Scz4v2lKB5IlYlFlwgnfAeXaPzG0xtpNI_GMRWKODMQEEkSBfg946noXk3J-L_I3NNv54-WqTYTI45Fd3V3dPFCauggluSjQOH_5CsolqE2GQpRSoo23RFwImMT3xGRvfxLliapzv9SyicV2amAgKFuD09aCgYKAZUSARASFQHGX2Mi15JzGp_HBqIFEnW4sS2WOw0175\", \"refresh_token\": \"1//04TeDZgrOJ99QCgYIARAAGAQSNwF-L9IrERaF5Nqt_Q6Fzf4RG9ib_6vOOhu5gPsIurcmiy2BrjKBY3ExdcTcLaONWUhLYFUw_JY\", \"token_uri\": \"https://oauth2.googleapis.com/token\", \"client_id\": \"407408718192.apps.googleusercontent.com\", \"client_secret\": \"hzanTai6fzSer7g45234b\"}"
+        },
+        {
+          "id": "yt_09",
+          "username": "badgirlsbusinesspage@gmail.com",
+          "oauth2_credentials": "{\"access_token\": \"ya29.a0AW4XtxhKXyaTnOUCQtCfpOzK6HkWyWxigj_DACe7KUYCTnVPvdmpd32rcCWYU5Bw3NR8GpNIQ1uNsAgRXUJADFQ_ly4e9GObaIxA95yc7s4RJcmwKO_V9Ua33br5-VaMNtKpKkB5ManFES0l5h2fbfRA8wR2K4laMu-wdOPVaCgYKAaMSARQSFQHGX2Mi7Jy1mNeOJqs-T7Hzkl8DBA0175\", \"refresh_token\": \"1//04AOTLgSbUikQCgYIARAAGAQSNwF-L9Ires19V9ynDJEQBGNQQh9eziKqJgRUzhMDB9xuBpiPg3D2VIOHpzrpXkqsIe5Sb1L6h0o\", \"token_uri\": \"https://oauth2.googleapis.com/token\", \"client_id\": \"407408718192.apps.googleusercontent.com\", \"client_secret\": \"hzanTai6fzSer7g45234b\"}"
+        },
+        {
+          "id": "yt_10",
+          "username": "hustlerscastclips@gmail.com",
+          "oauth2_credentials": "{\"access_token\": \"ya29.a0AW4XtxiAHPB3FBR5jQbv7bDySDx8eHIhJMNMwx1h2D8hrXc7HWOIoQKFhlou9NJ_r6lpFnrS2rT_d3VM-_F66VldYXs7XbX1-yWQG_FS5A9_eeyg68LltOB4beNnkTNswDu0qfzbZbX_SPcMMRBYlnSB-xdyfCeKH6nX2DoKaCgYKAUcSARcSFQHGX2Mi97XYYydKX_w2kWtmDrxgGA0175\", \"refresh_token\": \"1//04arTfehjrJY0CgYIARAAGAQSNwF-L9IrR12rnuUKnzXGcdx1Ac3fpp7QbcqN8nAQkZ-r51M60_c6sJ7usOaEU4RFuiaJS07TPuM\", \"token_uri\": \"https://oauth2.googleapis.com/token\", \"client_id\": \"407408718192.apps.googleusercontent.com\", \"client_secret\": \"hzanTai6fzSer7g45234b\"}"
+        }
+      ]
+    },
+    "facebook": {
+      "accounts": [
+        {
+          "id": "fb_01",
+          "username": "Vlad Kuzmenko SXY",
+          "page_id": "671281752728411",
+          "access_token": "EAAKFYR4wvBMBOz2XnEhLvAFoYNBgZCuQ8evY21O9PyS2kDZAAnu7IKaABLVNXTy8bmvjtB35S3xnWBUOCR7Eu9KL4VkRz0HRhl6M7iyqmZC2rdoCK13spSUP9CKoylqFZBLV80DEEMituRXnD9sAGuWDdZAgnHbORfUhZBDbRSLoGG9Ue7ULvABjucnSUMR3lMRJFYF007HMZB1jYOF1460X8aqkegg"
+        },
+        {
+          "id": "fb_02",
+          "username": "Vlad Kuzmenko Fan",
+          "page_id": "612416231961545",
+          "access_token": "EAAKFYR4wvBMBO6AHv7RsmZCm8JmEv4k8J6cKDSzuH3sHM2lSyY0PkH6VjUENZBeMFpObKtoZCrx0wT70Qf11fotZC4PPng8Ae61MsFSeAnKHTXI45pqpPDhzrSYPA1FWmYKliDSkvoFuvjhMufur1MZAObomkckwevpuVqK3ZC9zVKDVgiqeofzXOTlNT8PMrXANLxXTBu0nfUQO2MwWwZB6SoL0PeP"
+        },
+        {
+          "id": "fb_03",
+          "username": "Vlad Kuzmenko Clips",
+          "page_id": "696491813537074",
+          "access_token": "EAAKFYR4wvBMBOyVuAW3hNaiBTwpz3CXwVTpAnFZAhidiap37wZA868sJu6vydAyhchqS3pDXv1uKFZC2i03axXtrJj9ZCn1XLMvfhOfv3akPyhkfkHKEYcmB6YLGAEunr0oOytFcOFbUH7Q9YS49pQkzdKwuXC4FQDtd00HEsoEzc2VKsmnYCdkF0IzACXwTOm7JvxZAL4G4dyZCiphgMRlncGZBhBJ"
+        },
+        {
+          "id": "fb_04",
+          "username": "Vlad Kuzmenko Life",
+          "page_id": "681023058419840",
+          "access_token": "EAAKFYR4wvBMBOZCSA0UkxYny7yCfOIvgI2WWkGG6cJ2ZBVs3BnSQK6BZCEcZAieWsRxdCyngOs6mnMi1xzk7SVYBUtAxYGdQblvjsonMaJ6SBXiYBkNKZBWj8pWKz9okDKyZAiEKczPRDZBkck0EJQwZApLEmB2xKoEZCv4lFDXI3CxZAzK9AC5opmtjNy9W5CXsqOLmVZAjcNHxi9CTwAJv7RZAtlzaZBq3y"
+        },
+        {
+          "id": "fb_05",
+          "username": "Vlad Kuzmenko Live",
+          "page_id": "725297710656056",
+          "access_token": "EAAKFYR4wvBMBOzvdXsmTdUxDsLfJk5kjXrsRNN0ehUV5vawFGpFxvlfIIx1mgzBjDUoJNrK2yXyDqcfpAFDQkeSkzVuuQerHtQUvvEgS6ZARMVCYoloSqLe6A7fasp6JuF8kmW8J9IRZBfELFEXjGtjtW0fph9hyzZAeBGwnZCEKWZCT62prCNCus6DG0vZBhSvej8hwY2tiPqtmwk9k0XOWoZARZAkq"
+        },
+        {
+          "id": "fb_06",
+          "username": "Vlad Kuzmenko SPY",
+          "page_id": "687101857815464",
+          "access_token": "EAAKFYR4wvBMBO8XLCshWjKgNHMZAX2J2rIknLsptJfZCw04XPcRt8ZAfW966HQoWx09EZAUnZBu16wV9myusiH5pKXM33zSzLZBxZCPmVZBJWEaYTsUSxPgsbVW9dfily8dLuJiNvSK4DGb1rnxiJcF4KTbtbhnlj8qNb1iHK3mubXGcF1TqzbYtmWOUirCTGA8dHQmmYSc84hAbA7hTV347v218MAWk"
+        },
+        {
+          "id": "fb_07",
+          "username": "Vlad Kuzmenko Speech",
+          "page_id": "676717235517142",
+          "access_token": "EAAKFYR4wvBMBO9FT39wMxt8Bzy3ZBH2ClWYN4ac9fvKkn0PuTrt9p6YSfRYz3oaHeGCctH2uOe4ywbnF5Ty0ZCi7CRCT1LE7jrvormZATUNVGyWToxzdiUoCZAeBwAkimQionWmHC604eA5Fd1tqLZACmW2RYq6LywOAzROxIVMtvfq0FH0wmuLNmXwgBHwVZBrptMQTnnVYTIe1mZAMEqCojDwZBDnF"
+        },
+        {
+          "id": "fb_08",
+          "username": "Vlad Kuzmenko X",
+          "page_id": "663634283480351",
+          "access_token": "EAAKFYR4wvBMBO7rqG82DeWuUMUHelJUQl1O86uEUZAQVnn9hOMeZBAmZCtZCCdVlqFcpchvFiX0rWxGZA3e7zY6hpkn6ucrIENpoYKaokKm5GScX0ZBtMAFEcZCVuzG3wbnzZBqDEA3WLR8ZB7twy22UZAR0NRshroZAAmPyRdCZAjXkVvl29SZCumglUkXP8iD3zFK5ZBcoDV7CRB6vX047LhOeenZCZATGdULY"
+        },
+        {
+          "id": "fb_09",
+          "username": "VladKuzmenko.com",
+          "page_id": "615103268358687",
+          "access_token": "EAAKFYR4wvBMBOZBMZBkT2qkIdQUy3fgGjEFhY5g15uP19lVFlWZCGIA0WMItmTuMtW8tgxH2gwk1vA5ZAGO90cO5gLXvbnvarekDsb3QsXOPIu3QfVsQvTsVmTlOVeni9N59NRkTYvQvrhMCBUFhD3hxqzdKFkl34BCcbwtX6qAY4unix1i1JOju4yqe8dgJvgR5LsZAehHlOftEgVI9DD7fIPZCAR"
+        },
+        {
+          "id": "fb_10",
+          "username": "Vlad Kuzmenko Page",
+          "page_id": "653264527869845",
+          "access_token": "EAAKFYR4wvBMBO4V2NJFfEyTkZAcKX6uyKnGYBEdnFOlrVuVJiaxIcwL3NayPlLPk8FAsaSmATZBxd3ZAGqt4ungrMb5PbW09jZCGuZA7XsO9jp3dZBjMTmSvi1cSTy12lqeZAMKcvW2hsrr08r7XzIZBHUc8RUnMZCztzrce5YC23srODYASkQXOPUYcaedWNLBpBi5zmKmfonEAA95ujBaWAfKZAgZBP10"
+        }
+      ]
+    },
+    "x": {
+      "accounts": [
+        {
+          "id": "x_01",
+          "username": "kuzya.universe@gmail.com",
+          "api_key": "ZUiVHFnwthzMWTLaXppgfdtVB",
+          "api_secret": "GHLQyVeCCmrDUM7oM4p6U767q7Dl0qqxXZ9lctha4LEy7E99PX",
+          "access_token": "1733139482679906304-kO2ixdB5BQQp6oXhX0Lqzf62LtRQ08",
+          "access_token_secret": "xBoDmONg2ViqGgoqWIrwBrJByoKcDBLeamTbvyw9HF7cy",
+          "bearer_token": "AAAAAAAAAAAAAAAAAAAAAMLheAAAAAA0V9SmsNn1PcKaWTUoAKEO0vz0K0I%3DKt0r8r8TT9VKEtozwTjZ73OapeXYZrKcTtN5WPqGYBL6vsbcBP"
+        },
+        {
+          "id": "x_02",
+          "username": "kyza1045@gmail.com",
+          "api_key": "ZUiVHFnwthzMWTLaXppgfdtVB",
+          "api_secret": "GHLQyVeCCmrDUM7oM4p6U767q7Dl0qqxXZ9lctha4LEy7E99PX",
+          "access_token": "1733139482679906304-kO2ixdB5BQQp6oXhX0Lqzf62LtRQ08",
+          "access_token_secret": "xBoDmONg2ViqGgoqWIrwBrJByoKcDBLeamTbvyw9HF7cy",
+          "bearer_token": "AAAAAAAAAAAAAAAAAAAAAMLheAAAAAA0V9SmsNn1PcKaWTUoAKEO0vz0K0I%3DKt0r8r8TT9VKEtozwTjZ73OapeXYZrKcTtN5WPqGYBL6vsbcBP"
+        },
+        {
+          "id": "x_03",
+          "username": "creacontent.business@gmail.com",
+          "api_key": "ZUiVHFnwthzMWTLaXppgfdtVB",
+          "api_secret": "GHLQyVeCCmrDUM7oM4p6U767q7Dl0qqxXZ9lctha4LEy7E99PX",
+          "access_token": "1733139482679906304-kO2ixdB5BQQp6oXhX0Lqzf62LtRQ08",
+          "access_token_secret": "xBoDmONg2ViqGgoqWIrwBrJByoKcDBLeamTbvyw9HF7cy",
+          "bearer_token": "AAAAAAAAAAAAAAAAAAAAAMLheAAAAAA0V9SmsNn1PcKaWTUoAKEO0vz0K0I%3DKt0r8r8TT9VKEtozwTjZ73OapeXYZrKcTtN5WPqGYBL6vsbcBP"
+        },
+        {
+          "id": "x_04",
+          "username": "kyza104545@gmail.com",
+          "api_key": "ZUiVHFnwthzMWTLaXppgfdtVB",
+          "api_secret": "GHLQyVeCCmrDUM7oM4p6U767q7Dl0qqxXZ9lctha4LEy7E99PX",
+          "access_token": "1733139482679906304-kO2ixdB5BQQp6oXhX0Lqzf62LtRQ08",
+          "access_token_secret": "xBoDmONg2ViqGgoqWIrwBrJByoKcDBLeamTbvyw9HF7cy",
+          "bearer_token": "AAAAAAAAAAAAAAAAAAAAAMLheAAAAAA0V9SmsNn1PcKaWTUoAKEO0vz0K0I%3DKt0r8r8TT9VKEtozwTjZ73OapeXYZrKcTtN5WPqGYBL6vsbcBP"
+        },
+        {
+          "id": "x_05",
+          "username": "ai@vladkuzmenko.com",
+          "api_key": "ZUiVHFnwthzMWTLaXppgfdtVB",
+          "api_secret": "GHLQyVeCCmrDUM7oM4p6U767q7Dl0qqxXZ9lctha4LEy7E99PX",
+          "access_token": "1733139482679906304-kO2ixdB5BQQp6oXhX0Lqzf62LtRQ08",
+          "access_token_secret": "xBoDmONg2ViqGgoqWIrwBrJByoKcDBLeamTbvyw9HF7cy",
+          "bearer_token": "AAAAAAAAAAAAAAAAAAAAAMLheAAAAAA0V9SmsNn1PcKaWTUoAKEO0vz0K0I%3DKt0r8r8TT9VKEtozwTjZ73OapeXYZrKcTtN5WPqGYBL6vsbcBP"
+        },
+        {
+          "id": "x_06",
+          "username": "badgirlbusinesspage@gmail.com",
+          "api_key": "ZUiVHFnwthzMWTLaXppgfdtVB",
+          "api_secret": "GHLQyVeCCmrDUM7oM4p6U767q7Dl0qqxXZ9lctha4LEy7E99PX",
+          "access_token": "1733139482679906304-kO2ixdB5BQQp6oXhX0Lqzf62LtRQ08",
+          "access_token_secret": "xBoDmONg2ViqGgoqWIrwBrJByoKcDBLeamTbvyw9HF7cy",
+          "bearer_token": "AAAAAAAAAAAAAAAAAAAAAMLheAAAAAA0V9SmsNn1PcKaWTUoAKEO0vz0K0I%3DKt0r8r8TT9VKEtozwTjZ73OapeXYZrKcTtN5WPqGYBL6vsbcBP"
+        },
+        {
+          "id": "x_07",
+          "username": "badgirlscontactpage@gmail.com",
+          "api_key": "ZUiVHFnwthzMWTLaXppgfdtVB",
+          "api_secret": "GHLQyVeCCmrDUM7oM4p6U767q7Dl0qqxXZ9lctha4LEy7E99PX",
+          "access_token": "1733139482679906304-kO2ixdB5BQQp6oXhX0Lqzf62LtRQ08",
+          "access_token_secret": "xBoDmONg2ViqGgoqWIrwBrJByoKcDBLeamTbvyw9HF7cy",
+          "bearer_token": "AAAAAAAAAAAAAAAAAAAAAMLheAAAAAA0V9SmsNn1PcKaWTUoAKEO0vz0K0I%3DKt0r8r8TT9VKEtozwTjZ73OapeXYZrKcTtN5WPqGYBL6vsbcBP"
+        },
+        {
+          "id": "x_08",
+          "username": "badgirlxcontactpage@gmail.com",
+          "api_key": "ZUiVHFnwthzMWTLaXppgfdtVB",
+          "api_secret": "GHLQyVeCCmrDUM7oM4p6U767q7Dl0qqxXZ9lctha4LEy7E99PX",
+          "access_token": "1733139482679906304-kO2ixdB5BQQp6oXhX0Lqzf62LtRQ08",
+          "access_token_secret": "xBoDmONg2ViqGgoqWIrwBrJByoKcDBLeamTbvyw9HF7cy",
+          "bearer_token": "AAAAAAAAAAAAAAAAAAAAAMLheAAAAAA0V9SmsNn1PcKaWTUoAKEO0vz0K0I%3DKt0r8r8TT9VKEtozwTjZ73OapeXYZrKcTtN5WPqGYBL6vsbcBP"
+        },
+        {
+          "id": "x_09",
+          "username": "badgirlsbusinesspage@gmail.com",
+          "api_key": "ZUiVHFnwthzMWTLaXppgfdtVB",
+          "api_secret": "GHLQyVeCCmrDUM7oM4p6U767q7Dl0qqxXZ9lctha4LEy7E99PX",
+          "access_token": "1733139482679906304-kO2ixdB5BQQp6oXhX0Lqzf62LtRQ08",
+          "access_token_secret": "xBoDmONg2ViqGgoqWIrwBrJByoKcDBLeamTbvyw9HF7cy",
+          "bearer_token": "AAAAAAAAAAAAAAAAAAAAAMLheAAAAAA0V9SmsNn1PcKaWTUoAKEO0vz0K0I%3DKt0r8r8TT9VKEtozwTjZ73OapeXYZrKcTtN5WPqGYBL6vsbcBP"
+        },
+        {
+          "id": "x_10",
+          "username": "hustlerscastclips@gmail.com",
+          "api_key": "ZUiVHFnwthzMWTLaXppgfdtVB",
+          "api_secret": "GHLQyVeCCmrDUM7oM4p6U767q7Dl0qqxXZ9lctha4LEy7E99PX",
+          "access_token": "1733139482679906304-kO2ixdB5BQQp6oXhX0Lqzf62LtRQ08",
+          "access_token_secret": "xBoDmONg2ViqGgoqWIrwBrJByoKcDBLeamTbvyw9HF7cy",
+          "bearer_token": "AAAAAAAAAAAAAAAAAAAAAMLheAAAAAA0V9SmsNn1PcKaWTUoAKEO0vz0K0I%3DKt0r8r8TT9VKEtozwTjZ73OapeXYZrKcTtN5WPqGYBL6vsbcBP"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+Flask==2.3.2
+ffmpeg-python==0.2.0
+numpy==1.24.3
+opencv-python-headless==4.8.1.78
+scipy==1.11.1
+pydub==0.25.1

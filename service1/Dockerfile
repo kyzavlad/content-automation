@@ -1,32 +1,38 @@
-# service1/Dockerfile
 FROM python:3.9-slim
 
-# 1) системные зависимости
+# Install system dependencies including yt-dlp and ffmpeg
 RUN apt-get update \
- && apt-get install -y yt-dlp ffmpeg git \
- && rm -rf /var/lib/apt/lists/*
+    && apt-get install -y wget curl ffmpeg git \
+    && rm -rf /var/lib/apt/lists/*
 
-# 2) CPU-only PyTorch ≈200 MB вместо CUDA-гигантов
+# Install latest yt-dlp from GitHub
+RUN curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp \
+    && chmod a+rx /usr/local/bin/yt-dlp
+
+# Install Python dependencies
 RUN pip install --no-cache-dir \
-      torch==2.0.1+cpu \
-      torchvision==0.15.2+cpu \
-      --index-url https://download.pytorch.org/whl/cpu
+    torch==2.0.1+cpu \
+    torchvision==0.15.2+cpu \
+    --index-url https://download.pytorch.org/whl/cpu
 
-# 3) Whisper и Flask
-RUN pip install --no-cache-dir openai-whisper gdown flask
-
-# 4) Копируем файл куки внутрь образа
-COPY cookies.txt /cookies.txt
-
-# 5) Переменные окружения и рабочая директория
-ENV FFMPEG_PATH=/usr/bin/ffmpeg
+# Set working directory
 WORKDIR /app
 
-# 6) Копируем код сервиса
+# Copy requirements
+COPY requirements.txt .
+
+# Install additional Python packages
+RUN pip install --no-cache-dir -r requirements.txt \
+    && pip install --no-cache-dir gdown
+
+# Copy cookies file for authenticated downloads
+COPY cookies.txt /cookies.txt
+
+# Copy application
 COPY service1.py .
 
-# 7) Открываем порт
-EXPOSE 3001
+# Create data directory
+RUN mkdir -p /data
 
-# 8) Запуск
+# Run the application
 CMD ["python3", "service1.py"]
